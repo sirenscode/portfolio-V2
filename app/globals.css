@@ -19,15 +19,15 @@
 body {
   background:#1A1B20;
   color: #FFF;
-  overflow: hidden;
 }
-#navlink::after{
-  position: absolute;
-  width: 200px;
-  height: 20px;
-  background-color: #FFF;
+.navlink::after{
+  display:block;
+  content: '';
+  border-bottom: solid 3px #B48E57;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
 }
-
+.navlink:hover:after { transform: scaleX(1); }
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -43,14 +43,17 @@ body {
   src: url("../app/assets/fonts/HurmeGeometricSans3-Regular.woff2");
 }
 ::-webkit-scrollbar{
-  background-color: red;
+  background-color: transparent;
   width: 6px;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-track{
-  background-color: blue;
+  background-color: transparent;
   width: 6px;
+  
 }
 ::-webkit-scrollbar-thumb{
-  background-color: rgb(141, 141, 29);
+  background-color: #B48E57;
   width: 6px;
+  border-radius: 10px;
 }
